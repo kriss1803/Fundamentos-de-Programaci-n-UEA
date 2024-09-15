@@ -130,20 +130,21 @@ temperaturas = [
 
 #Definición de la función para calcular la temperatura promedio de cada ciudad
 def promedio_temperaturas(ciudades, temperaturas):
-    c=0
+    c=0 #contador para recorrer el vector ciudades
+    #Se realizan 3 for, para recorrer las ciudades, las semanas y los días, respectivamentes.
     for ciudad in temperaturas:
         print(ciudades[c])
         c=c+1
         x=1
         for semana in ciudad:
-            suma = 0
+            suma = 0 #Variable para almacenar las sumas de las temperaturas
             for dia in semana:
-                suma += dia['temp']
-            p= suma / 7
+                suma += dia['temp'] #Se van sumando y almacenando en la variable las temperaturas en cada día de la ciudad
+            p= suma / 7 #Se calcula el promedio de las temperaturas
             print(f"Semana {x} : {p:.2f}°C")
             x=x+1
         print("\n")
 
-#Llamado de la función para calcular el promedio de temperaturas
+
 print("Promedio de temperaturas por ciudades")
-promedio_temperaturas(ciudades, temperaturas)
+promedio_temperaturas(ciudades, temperaturas) #Llamado de la función para calcular el promedio de temperaturas
